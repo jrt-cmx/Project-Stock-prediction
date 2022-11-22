@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% set title = company_symbol + ' stock history' %}
+
+{% block navbar %}
+  {% include 'navbar.html' %}
+{% endblock %}
+
+{% block content %}
+<div class="container text-center">
+    <div class="row orange-container">
+      <h1 class="col">
+        {% if company %}
+          {{ company }}<br>
+        {% endif %}
+        ({{ company_symbol }})
+      </h1>
+      {% if compare_company_symbol %}
+        <h1 class="col">
+          {% if compare_company %}
+            {{ compare_company }}<br>
+          {% endif %}
+          ({{ compare_company_symbol }})
+        </h1>
+      {% endif %}
+    </div>
+</div>
+{% endblock %}
